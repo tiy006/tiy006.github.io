@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif; /* 设置字体 */
+    margin: 0; /* 去除默认外边距 */
+    padding: 0; /* 去除默认内边距 */
+    display: flex; /* 使用弹性布局 */
+    flex-direction: column; /* 垂直排列子元素 */
+    align-items: center; /* 水平居中子元素 */
+    justify-content: center; /* 垂直居中子元素 */
+    height: 100vh; /* 设置视口高度 */
+    background: url('background-image.jpg') no-repeat center center fixed; /* 设置背景图片并固定 */
+    background-size: cover; /* 背景图片覆盖整个视口 */
+}
+
+header {
+    background-color: rgba(76, 175, 80, 0.8); /* 设置背景颜色及透明度 */
+    color: white; /* 设置文本颜色为白色 */
+    padding: 20px; /* 内边距 */
+    width: 100%; /* 宽度占满整个视口 */
+    text-align: center; /* 文本居中 */
+}
+
+nav ul {
+    list-style: none; /* 去除列表样式 */
+    padding: 0; /* 去除内边距 */
+    display: flex; /* 使用弹性布局 */
+    justify-content: center; /* 水平居中子元素 */
+    gap: 20px; /* 子元素间距 */
+}
+
+nav ul li {
+    display: inline; /* 将列表项设置为行内元素 */
+}
+
+nav ul li a {
+    color: white; /* 设置链接文本颜色为白色 */
+    text-decoration: none; /* 去除链接下划线 */
+    padding: 10px 20px; /* 内边距 */
+}
+
+main {
+    background-color: rgba(255, 255, 255, 0.8); /* 设置主内容区背景颜色及透明度 */
+    padding: 20px; /* 内边距 */
+    border-radius: 10px; /* 圆角 */
+    text-align: center; /* 文本居中 */
+    width: 80%; /* 设置宽度 */
+    max-width: 800px; /* 设置最大宽度 */
+}
+
+img {
+    max-width: 100%; /* 确保图片不会超出其容器 */
+    height: auto; /* 保持图片比例 */
+    margin: 10px 0; /* 图片间距 */
+}
+
+audio, video {
+    display: block; /* 将音频和视频元素显示为块元素 */
+    margin: 10px 0; /* 音频和视频间距 */
+}
+
+.audio-button {
+    position: fixed; /* 固定位置 */
+    bottom: 60px; /* 调整距离底部的位置 */
+    right: 20px; /* 距离右侧20px */
+    padding: 10px 20px; /* 内边距 */
+    font-size: 16px; /* 字体大小 */
+    background-color: rgba(76, 175, 80, 0.8); /* 按钮背景颜色及透明度 */
+    color: white; /* 按钮文本颜色 */
+    border: none; /* 无边框 */
+    border-radius: 5px; /* 圆角 */
+    cursor: pointer; /* 鼠标悬停时显示指针 */
+}
+
+.volume-slider {
+    position: fixed; /* 固定位置 */
+    bottom: 20px; /* 距离底部20px */
+    right: 20px; /* 距离右侧20px */
+    width: 100px; /* 滑块宽度 */
+}
+
+.playlist {
+    position: fixed; /* 固定位置 */
+    bottom: 100px; /* 距离底部100px */
+    right: 20px; /* 距离右侧20px */
+    display: flex; /* 使用弹性布局 */
+    flex-direction: column; /* 垂直排列子元素 */
+    gap: 10px; /* 子元素间距 */
+}
+
+.playlist-item {
+    padding: 10px; /* 内边距 */
+    background-color: rgba(76, 175, 80, 0.8); /* 按钮背景颜色及透明度 */
+    color: white; /* 按钮文本颜色 */
+    border: none; /* 无边框 */
+    border-radius: 5px; /* 圆角 */
+    cursor: pointer; /* 鼠标悬停时显示指针 */
+}
+
+.game-button {
+    padding: 10px 20px; /* 游戏按钮内边距 */
+    font-size: 20px; /* 游戏按钮字体大小 */
+    background-color: rgba(76, 175, 80, 0.8); /* 游戏按钮背景颜色及透明度 */
+    color: white; /* 游戏按钮文本颜色 */
+    border: none; /* 无边框 */
+    border-radius: 5px; /* 游戏按钮圆角 */
+    cursor: pointer; /* 鼠标悬停时显示指针 */
+}

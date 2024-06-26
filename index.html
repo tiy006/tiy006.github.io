@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple HTML Page with CSS</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8"> <!-- 设置文档的字符编码为UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 使页面在不同设备上自适应 -->
+    <title>Simple Website - Home</title> <!-- 页面标题 -->
+    <link rel="stylesheet" href="styles.css"> <!-- 引入外部CSS文件 -->
 </head>
 <body>
-
-<header>
-    <h1>Welcome to My Simple HTML Page</h1>
-</header>
-
-<main>
-    <h2>About This Page</h2>
-    <p>This is a simple HTML page with a header, main content area, and a footer.</p>
-    <p>The styles are linked from an external CSS file.</p>
-</main>
-
-<footer>
-    <p>&copy; 2024 Simple HTML Page. All rights reserved.</p>
-</footer>
-
+    <header>
+        <h1>Welcome to My Simple Website</h1> <!-- 网站的主标题 -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li> <!-- 链接到主页 -->
+                <li><a href="images.html">Images</a></li> <!-- 链接到图片页面 -->
+                <li><a href="music.html">Music</a></li> <!-- 链接到音乐页面 -->
+                <li><a href="videos.html">Videos</a></li> <!-- 链接到视频页面 -->
+                <li><a href="game.html">Game</a></li> <!-- 链接到游戏页面 -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <p>This is the home page of my simple website.</p> <!-- 主页的主内容段落 -->
+    </main>
+    <audio id="background-audio" loop> <!-- 音频元素，循环播放 -->
+        <source src="your-audio-file.mp3" type="audio/mp3"> <!-- 使用您自己的音频文件 -->
+        Your browser does not support the audio element.
+    </audio>
+    <button id="audio-toggle" class="audio-button">Play/Pause BGM</button> <!-- 音频开关按钮 -->
+    <input type="range" id="volume-control" min="0" max="1" step="0.1" value="1" class="volume-slider"> <!-- 音量控制滑块 -->
+    <div class="playlist">
+        <button class="playlist-item" data-src="your-audio-file1.mp3">Track 1</button>
+        <button class="playlist-item" data-src="your-audio-file2.mp3">Track 2</button>
+    </div> <!-- 播放列表 -->
+    <script src="script.js"></script> <!-- 引入外部JavaScript文件 -->
 </body>
 </html>

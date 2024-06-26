@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Website - Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Game</h1> <!-- 游戏页面的标题 -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li> <!-- 链接到主页 -->
+                <li><a href="images.html">Images</a></li> <!-- 链接到图片页面 -->
+                <li><a href="music.html">Music</a></li> <!-- 链接到音乐页面 -->
+                <li><a href="videos.html">Videos</a></li> <!-- 链接到视频页面 -->
+                <li><a href="game.html">Game</a></li> <!-- 链接到游戏页面 -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <p>Click the button as many times as you can in 10 seconds!</p> <!-- 游戏说明 -->
+        <button id="click-button" class="game-button">Click me!</button> <!-- 游戏按钮 -->
+        <p>Score: <span id="score">0</span></p> <!-- 显示得分 -->
+        <p id="message"></p> <!-- 显示游戏结束信息 -->
+    </main>
+    <script src="game.js"></script> <!-- 引入外部JavaScript文件 -->
+</body>
+</html>
