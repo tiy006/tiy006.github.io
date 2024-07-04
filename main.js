@@ -126,7 +126,6 @@ class Particle {
 
     show() {
         noStroke();
-        fill(106, 13, 173, this.lifespan); // 设置粒子颜色为rgb(106, 13, 173)
         fill(106, 13, 173, this.lifespan); // 设置填充颜色为rgb(106, 13, 173)
         ellipse(this.pos.x, this.pos.y, this.size); // 画出粒子
     }
