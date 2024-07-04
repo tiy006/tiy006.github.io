@@ -1,106 +1,358 @@
+:root {
+    --primary-color: #6a0dad; /* 定义主要颜色 */
+    --secondary-color: #333; /* 定义次要颜色 */
+    --background-color: #f8f9fa; /* 定义背景颜色 */
+    --text-color: #666; /* 定义文字颜色 */
+    --hover-color: rgba(106, 13, 173, 0.5); /* 定义悬停颜色 */
+}
+
 body {
     font-family: Arial, sans-serif; /* 设置字体 */
-    margin: 0; /* 去除默认外边距 */
-    padding: 0; /* 去除默认内边距 */
-    display: flex; /* 使用弹性布局 */
-    flex-direction: column; /* 垂直排列子元素 */
-    align-items: center; /* 水平居中子元素 */
-    justify-content: center; /* 垂直居中子元素 */
-    height: 100vh; /* 设置视口高度 */
-    background: url('background-image.jpg') no-repeat center center fixed; /* 设置背景图片并固定 */
-    background-size: cover; /* 背景图片覆盖整个视口 */
+    margin: 0; /* 取消默认的外边距 */
+    padding: 0; /* 取消默认的内边距 */
+    background-color: transparent; /* 设置背景为透明 */
+    color: #333; /* 设置文字颜色 */
+    background-color: rgb(0, 0, 0); /* 设置背景颜色为黑色 */
 }
 
-header {
-    background-color: rgba(76, 175, 80, 0.8); /* 设置背景颜色及透明度 */
-    color: white; /* 设置文本颜色为白色 */
-    padding: 20px; /* 内边距 */
-    width: 100%; /* 宽度占满整个视口 */
-    text-align: center; /* 文本居中 */
+.navbar {
+    display: flex; /* 使用flex布局 */
+    justify-content: space-between; /* 元素之间的间距 */
+    align-items: center; /* 元素居中对齐 */
+    padding: 10px 50px; /* 设置内边距 */
+    background-color: #fff; /* 设置背景颜色 */
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* 设置阴影效果 */
+    position: fixed; /* 固定位置 */
+    width: 100vw; /* 设置宽度 */
+    top: 0; /* 固定在顶部 */
+    z-index: 1000; /* 设置堆叠顺序 */
+    box-sizing: border-box; /* 包括内边距和边框在内的盒模型 */
 }
 
-nav ul {
+.logo a {
+    text-decoration: none; /* 去除下划线 */
+    font-size: 1.5em; /* 设置字体大小 */
+    color: #333; /* 设置颜色 */
+}
+
+.nav-links {
     list-style: none; /* 去除列表样式 */
-    padding: 0; /* 去除内边距 */
-    display: flex; /* 使用弹性布局 */
-    justify-content: center; /* 水平居中子元素 */
-    gap: 20px; /* 子元素间距 */
+    display: flex; /* 使用flex布局 */
+    gap: 20px; /* 设置元素间的间距 */
+    margin: 0; /* 取消默认的外边距 */
+    padding: 0; /* 取消默认的内边距 */
 }
 
-nav ul li {
-    display: inline; /* 将列表项设置为行内元素 */
+.nav-links li {
+    display: flex; /* 使用flex布局 */
+    align-items: center; /* 元素居中对齐 */
 }
 
-nav ul li a {
-    color: white; /* 设置链接文本颜色为白色 */
-    text-decoration: none; /* 去除链接下划线 */
-    padding: 10px 20px; /* 内边距 */
+.nav-links a {
+    text-decoration: none; /* 去除下划线 */
+    font-size: 1em; /* 设置字体大小 */
+    color: #000000; /* 设置颜色 */
+    transition: color 0.3s; /* 设置颜色变化的过渡时间 */
 }
 
-main {
-    background-color: rgba(255, 255, 255, 0.8); /* 设置主内容区背景颜色及透明度 */
-    padding: 20px; /* 内边距 */
-    border-radius: 10px; /* 圆角 */
-    text-align: center; /* 文本居中 */
-    width: 80%; /* 设置宽度 */
+.nav-links a.active,
+.nav-links a:hover {
+    color: #6a0dad; /* 设置悬停和活动状态的颜色 */
+}
+
+.icon {
+    font-size: 1.2em; /* 设置图标字体大小 */
+}
+
+.section {
+    display: flex; /* 使用flex布局 */
+    flex-direction: column; /* 垂直排列 */
+    justify-content: center; /* 元素居中对齐 */
+    align-items: center; /* 元素居中对齐 */
+    text-align: center; /* 文字居中对齐 */
+    min-height: 100vh; /* 最小高度为视窗高度 */
+    padding: 20px; /* 设置内边距 */
+}
+
+.container {
     max-width: 800px; /* 设置最大宽度 */
+    width: 100%; /* 设置宽度 */
+    margin: auto; /* 自动设置外边距居中 */
+    padding: 20px; /* 设置内边距 */
 }
 
-img {
-    max-width: 100%; /* 确保图片不会超出其容器 */
-    height: auto; /* 保持图片比例 */
-    margin: 10px 0; /* 图片间距 */
+.media-section {
+    margin: 20px 0; /* 设置上下外边距 */
 }
 
-audio, video {
-    display: block; /* 将音频和视频元素显示为块元素 */
-    margin: 10px 0; /* 音频和视频间距 */
+.project-image {
+    max-width: 100%; /* 设置最大宽度 */
+    height: auto; /* 自动调整高度 */
+    border-radius: 10px; /* 设置圆角 */
 }
 
-.audio-button {
-    position: fixed; /* 固定位置 */
-    bottom: 60px; /* 调整距离底部的位置 */
-    right: 20px; /* 距离右侧20px */
-    padding: 10px 20px; /* 内边距 */
-    font-size: 16px; /* 字体大小 */
-    background-color: rgba(76, 175, 80, 0.8); /* 按钮背景颜色及透明度 */
-    color: white; /* 按钮文本颜色 */
-    border: none; /* 无边框 */
-    border-radius: 5px; /* 圆角 */
-    cursor: pointer; /* 鼠标悬停时显示指针 */
+.icon {
+    font-size: 1.2em; /* 设置图标字体大小 */
 }
 
-.volume-slider {
-    position: fixed; /* 固定位置 */
-    bottom: 20px; /* 距离底部20px */
-    right: 20px; /* 距离右侧20px */
-    width: 100px; /* 滑块宽度 */
+.home-section {
+    display: grid; /* 使用网格布局 */
+    grid-template-columns: repeat(2, 1fr); /* 设置两列布局 */
+    align-items: center; /* 元素居中对齐 */
+    justify-items: center; /* 元素居中对齐 */
+    height: 100vh; /* 设置高度为视窗高度 */
+    text-align: center; /* 文字居中对齐 */
+    scroll-snap-align: start; /* 设置滚动对齐 */
+    gap: 20px; /* 设置元素间的间距 */
 }
 
-.playlist {
-    position: fixed; /* 固定位置 */
-    bottom: 100px; /* 距离底部100px */
-    right: 20px; /* 距离右侧20px */
-    display: flex; /* 使用弹性布局 */
-    flex-direction: column; /* 垂直排列子元素 */
-    gap: 10px; /* 子元素间距 */
+.text-section {
+    max-width: 600px; /* 设置最大宽度 */
 }
 
-.playlist-item {
-    padding: 10px; /* 内边距 */
-    background-color: rgba(76, 175, 80, 0.8); /* 按钮背景颜色及透明度 */
-    color: white; /* 按钮文本颜色 */
-    border: none; /* 无边框 */
-    border-radius: 5px; /* 圆角 */
-    cursor: pointer; /* 鼠标悬停时显示指针 */
+h1, h2 {
+    font-size: 2.5em; /* 设置标题字体大小 */
+    margin-bottom: 10px; /* 设置底部外边距 */
 }
 
-.game-button {
-    padding: 10px 20px; /* 游戏按钮内边距 */
-    font-size: 20px; /* 游戏按钮字体大小 */
-    background-color: rgba(76, 175, 80, 0.8); /* 游戏按钮背景颜色及透明度 */
-    color: white; /* 游戏按钮文本颜色 */
-    border: none; /* 无边框 */
-    border-radius: 5px; /* 游戏按钮圆角 */
-    cursor: pointer; /* 鼠标悬停时显示指针 */
+.subtitle, .section p {
+    font-size: 1.5em; /* 设置副标题和段落字体大小 */
+    color: var(--text-color); /* 设置文字颜色 */
+}
+
+.description {
+    font-size: 1em; /* 设置描述文字的字体大小 */
+    color: #777; /* 设置描述文字的颜色 */
+    margin: 10px 0; /* 设置上下外边距 */
+}
+
+.icons {
+    display: flex; /* 使用flex布局 */
+    justify-content: center; /* 元素居中对齐 */
+    gap: 15px; /* 设置元素间的间距 */
+    margin: 20px 0; /* 设置上下外边距 */
+}
+
+.icons a {
+    display: inline-block; /* 设置为行内块元素 */
+    width: 80px; /* 设置宽度 */
+    height: 50px; /* 设置高度 */
+    background-color: var(--primary-color); /* 设置背景颜色 */
+    border-radius: 10px; /* 设置圆角 */
+    display: flex; /* 使用flex布局 */
+    align-items: center; /* 元素居中对齐 */
+    justify-content: center; /* 元素居中对齐 */
+    transition: transform 0.3s, box-shadow 0.3s; /* 设置变换和阴影的过渡时间 */
+}
+
+.icons img {
+    width: 70%; /* 设置图像宽度 */
+    height: 70%; /* 设置图像高度 */
+}
+
+.icons a:hover {
+    transform: scale(1.1); /* 设置悬停时的缩放 */
+    box-shadow: 0 0 10px var(--hover-color); /* 设置悬停时的阴影效果 */
+}
+
+.contact-btn, .resume-btn, .demo-btn {
+    display: inline-block; /* 设置为行内块元素 */
+    padding: 10px 20px; /* 设置内边距 */
+    background-color: var(--primary-color); /* 设置背景颜色 */
+    color: #fff; /* 设置文字颜色 */
+    border-radius: 5px; /* 设置圆角 */
+    text-decoration: none; /* 去除下划线 */
+    font-size: 1em; /* 设置字体大小 */
+    margin-top: 20px; /* 设置顶部外边距 */
+}
+
+.image-section img, .about-image img, .portfolio-item img {
+    max-width: 300px; /* 设置最大宽度 */
+    border-radius: 20px; /* 设置圆角 */
+}
+
+.scroll-down {
+    position: absolute; /* 绝对定位 */
+    bottom: 20px; /* 设置距离底部的距离 */
+    left: 50%; /* 设置水平居中 */
+    transform: translateX(-50%); /* 水平居中对齐 */
+    text-align: center; /* 文字居中对齐 */
+}
+
+.scroll-down a {
+    font-size: 1em; /* 设置字体大小 */
+    color: var(--primary-color); /* 设置文字颜色 */
+    text-decoration: none; /* 去除下划线 */
+}
+
+.section {
+    display: flex; /* 使用flex布局 */
+    flex-direction: column; /* 垂直排列 */
+    justify-content: center; /* 元素居中对齐 */
+    align-items: center; /* 元素居中对齐 */
+    text-align: center; /* 文字居中对齐 */
+    height: 100vh; /* 设置高度为视窗高度 */
+    padding: 0 20px; /* 设置内边距 */
+}
+
+.about-content {
+    display: flex; /* 使用flex布局 */
+    flex-direction: column; /* 垂直排列 */
+    align-items: center; /* 元素居中对齐 */
+    text-align: center; /* 文字居中对齐 */
+}
+
+.about-text {
+    max-width: 600px; /* 设置最大宽度 */
+}
+
+.stats {
+    display: flex; /* 使用flex布局 */
+    justify-content: space-around; /* 元素之间的间距 */
+    width: 100%; /* 设置宽度 */
+    margin-top: 20px; /* 设置顶部外边距 */
+}
+
+.stats div {
+    text-align: center; /* 文字居中对齐 */
+}
+
+.skills-content {
+    display: flex; /* 使用flex布局 */
+    flex-direction: column; /* 垂直排列 */
+    align-items: center; /* 元素居中对齐 */
+    text-align: center; /* 文字居中对齐 */
+}
+
+.skill {
+    display: flex; /* 使用flex布局 */
+    align-items: center; /* 元素居中对齐 */
+    gap: 20px; /* 设置元素间的间距 */
+    margin-top: 20px; /* 设置顶部外边距 */
+}
+
+.skill .icon {
+    font-size: 2em; /* 设置图标字体大小 */
+    color: var(--primary-color); /* 设置图标颜色 */
+}
+
+.skill-info h3 {
+    margin: 0; /* 取消默认的外边距 */
+    font-size: 1.5em; /* 设置字体大小 */
+    color: var(--secondary-color); /* 设置文字颜色 */
+}
+
+.skill-info p {
+    margin: 0; /* 取消默认的外边距 */
+    font-size: 1em; /* 设置字体大小 */
+    color: #777; /* 设置文字颜色 */
+}
+
+.portfolio-wrapper {
+    position: relative; /* 相对定位 */
+    overflow: hidden; /* 隐藏溢出内容 */
+    width: 100%; /* 设置宽度 */
+}
+
+.portfolio-container {
+    display: flex; /* 使用flex布局 */
+    transition: transform 0.3s ease-in-out; /* 设置变换的过渡时间 */
+}
+
+.portfolio-item {
+    min-width: 100%; /* 设置最小宽度 */
+    box-sizing: border-box; /* 包括内边距和边框在内的盒模型 */
+    padding: 20px; /* 设置内边距 */
+}
+
+.portfolio-arrows {
+    position: absolute; /* 绝对定位 */
+    top: 50%; /* 设置距离顶部的距离 */
+    width: 100%; /* 设置宽度 */
+    display: flex; /* 使用flex布局 */
+    justify-content: space-between; /* 元素之间的间距 */
+    transform: translateY(-50%); /* 垂直居中对齐 */
+    z-index: 1; /* 设置堆叠顺序 */
+}
+
+.arrow {
+    background-color: rgb(255, 255, 255); /* 设置背景颜色 */
+    color: white; /* 设置文字颜色 */
+    border: none; /* 去除边框 */
+    padding: 10px 20px; /* 设置内边距 */
+    cursor: pointer; /* 设置鼠标指针样式 */
+    font-size: 2em; /* 设置字体大小 */
+    border-radius: 10px; /* 设置圆角 */
+    transition: background-color 0.3s, transform 0.3s; /* 设置变换的过渡时间 */
+}
+
+.arrow:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* 设置悬停时的背景颜色 */
+    transform: scale(1.1); /* 设置悬停时的缩放效果 */
+}
+
+.pagination {
+    display: flex; /* 使用flex布局 */
+    gap: 10px; /* 设置元素间的间距 */
+    justify-content: center; /* 元素居中对齐 */
+}
+
+.pagination .dot {
+    width: 10px; /* 设置宽度 */
+    height: 10px; /* 设置高度 */
+    background-color: #ccc; /* 设置背景颜色 */
+    border-radius: 50%; /* 设置圆角 */
+}
+
+.pagination .dot.active {
+    background-color: var(--primary-color); /* 设置活动状态的背景颜色 */
+}
+
+.contact-info {
+    display: flex; /* 使用flex布局 */
+    flex-direction: column; /* 垂直排列 */
+    align-items: center; /* 元素居中对齐 */
+    gap: 20px; /* 设置元素间的间距 */
+}
+
+.contact-item {
+    display: flex; /* 使用flex布局 */
+    flex-direction: column; /* 垂直排列 */
+    align-items: center; /* 元素居中对齐 */
+}
+
+.contact-item .icon {
+    font-size: 2em; /* 设置图标字体大小 */
+    color: var(--primary-color); /* 设置图标颜色 */
+}
+
+.contact-item h3 {
+    margin: 10px 0 5px; /* 设置上下外边距 */
+    font-size: 1.5em; /* 设置字体大小 */
+    color: var(--secondary-color); /* 设置文字颜色 */
+}
+
+.contact-item p {
+    margin: 0; /* 取消默认的外边距 */
+    font-size: 1em; /* 设置字体大小 */
+    color: #777; /* 设置文字颜色 */
+}
+
+@media (max-width: 768px) {
+    .home-section, .section {
+        grid-template-columns: 1fr; /* 设置一列布局 */
+    }
+
+    .text-section, .image-section, .about-content, .skills-content, .portfolio-content, .contact-info {
+        max-width: 100%; /* 设置最大宽度 */
+    }
+}
+
+#particle-container {
+    position: fixed; /* 固定定位 */
+    top: 0; /* 设置距离顶部的距离 */
+    left: 0; /* 设置距离左侧的距离 */
+    width: 100%; /* 设置宽度 */
+    height: 100%; /* 设置高度 */
+    z-index: -1; /* 确保粒子效果在所有内容的下面 */
 }

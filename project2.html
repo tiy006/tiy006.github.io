@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2</title>
+    <link rel="stylesheet" href="styles.css"> <!-- 链接到外部CSS文件 -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            z-index: 2; /* 确保导航栏在较高的层级 */
+            position: relative;
+        }
+        .navbar .logo a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            float: right;
+        }
+        .nav-links li {
+            float: left;
+        }
+        .nav-links li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .nav-links li a:hover, .nav-links li a.active {
+            background-color: #575757;
+        }
+        .section {
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        .image-gallery img {
+            width: 100%;
+            height: 150px; /* 设置图片固定高度 */
+            object-fit: cover; /* 图片裁剪以适应容器大小 */
+            cursor: pointer;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 3; /* 确保模态框在最高层级 */
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        .close, .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover, .modal-close:hover,
+        .close:focus, .modal-close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .modal-close {
+            position: fixed;
+            top: 20px;
+            right: 25px;
+            font-size: 35px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar"> <!-- 导航栏容器 -->
+            <div class="logo">
+                <a href="#">ASOUTHERNCAT</a> <!-- 网站logo链接 -->
+            </div>
+            <ul class="nav-links"> <!-- 导航链接列表 -->
+                <li><a href="#home" class="active">首页</a></li> <!-- 首页链接 -->
+                <li><a href="#about">关于</a></li> <!-- 关于链接 -->
+                <li><a href="#skills">技能</a></li> <!-- 技能链接 -->
+                <li><a href="#portfolio">项目</a></li> <!-- 项目集链接 -->
+                <li><a href="#contact">联系方式</a></li> <!-- 联系链接 -->
+                <li><a href="#" id="toggle-mode" class="toggle-mode"><i class="icon">🌙</i></a></li> <!-- 夜间模式图标链接 -->
+            </ul>
+        </nav>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <h1>更多作品</h1>
+            <p>点击查看详情</p> <!-- 项目2的详细信息 -->
+            <div class="image-gallery">
+                <img src="image1.jpg" alt="Image 1">
+                <img src="image2.jpg" alt="Image 2">
+                <img src="image3.jpg" alt="Image 3">
+                <img src="image4.jpg" alt="Image 4">
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for image preview -->
+    <div id="myModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+        // 获取 modal 元素
+        var modal = document.getElementById("myModal");
+
+        // 获取所有图片并绑定点击事件
+        var images = document.querySelectorAll(".image-gallery img");
+        var modalImg = document.getElementById("img01");
+
+        // 为每个图片绑定点击事件，点击时显示 modal，并设置 modal 中的图片为被点击的图片
+        images.forEach(img => {
+            img.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
+
+        // 获取关闭按钮元素
+        var closeModal = document.getElementsByClassName("modal-close")[0];
+
+        // 当用户点击关闭按钮时，隐藏 modal
+        closeModal.onclick = function() { 
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>

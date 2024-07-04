@@ -1,37 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"> <!-- 设置文档的字符编码为UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 使页面在不同设备上自适应 -->
-    <title>Simple Website - Home</title> <!-- 页面标题 -->
-    <link rel="stylesheet" href="styles.css"> <!-- 引入外部CSS文件 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="particles.js" defer></script>
+    <script src="main.js" defer></script>
+    <style>
+        .click-effect {
+            position: absolute;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            pointer-events: none; /* 防止鼠标与此元素交互 */
+            transform: translate(-50%, -50%);
+            animation: fade-out 0.5s forwards;
+        }
+        body {
+        background-color: white;
+    }
+
+        @keyframes fade-out {
+            to {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(2);
+            }
+        }
+    </style>
 </head>
 <body>
+    <div id="particle-container"></div>
+    <!-- 其他网页内容 -->
+
+    <!-- 导航栏部分 -->
     <header>
-        <h1>Welcome to My Simple Website</h1> <!-- 网站的主标题 -->
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li> <!-- 链接到主页 -->
-                <li><a href="images.html">Images</a></li> <!-- 链接到图片页面 -->
-                <li><a href="music.html">Music</a></li> <!-- 链接到音乐页面 -->
-                <li><a href="videos.html">Videos</a></li> <!-- 链接到视频页面 -->
-                <li><a href="game.html">Game</a></li> <!-- 链接到游戏页面 -->
+        <nav class="navbar"> <!-- 导航栏容器 -->
+            <div class="logo">
+                <a href="#">ASOUTHERNCAT</a> <!-- 网站logo链接 -->
+            </div>
+            <ul class="nav-links"> <!-- 导航链接列表 -->
+                <li><a href="#home" class="active">首页</a></li> <!-- 首页链接 -->
+                <li><a href="#about">关于</a></li> <!-- 关于链接 -->
+                <li><a href="#skills">技能</a></li> <!-- 技能链接 -->
+                <li><a href="#portfolio">项目</a></li> <!-- 项目集链接 -->
+                <li><a href="#contact">联系方式</a></li> <!-- 联系链接 -->
+                <li><a href="#" id="toggle-mode" class="toggle-mode"><i class="icon">🌙</i></a></li> <!-- 夜间模式图标链接 -->
             </ul>
         </nav>
     </header>
-    <main>
-        <p>This is the home page of my simple website.</p> <!-- 主页的主内容段落 -->
-    </main>
-    <audio id="background-audio" loop> <!-- 音频元素，循环播放 -->
-        <source src="your-audio-file.mp3" type="audio/mp3"> <!-- 使用您自己的音频文件 -->
-        Your browser does not support the audio element.
-    </audio>
-    <button id="audio-toggle" class="audio-button">Play/Pause BGM</button> <!-- 音频开关按钮 -->
-    <input type="range" id="volume-control" min="0" max="1" step="0.1" value="1" class="volume-slider"> <!-- 音量控制滑块 -->
-    <div class="playlist">
-        <button class="playlist-item" data-src="your-audio-file1.mp3">Track 1</button>
-        <button class="playlist-item" data-src="your-audio-file2.mp3">Track 2</button>
-    </div> <!-- 播放列表 -->
-    <script src="script.js"></script> <!-- 引入外部JavaScript文件 -->
+    
+    <!-- 主要内容 -->
+    <div class="content"> <!-- 主要内容容器 -->
+        <!-- 第一页内容 -->
+        <div class="home-section" id="home"> <!-- 首页部分 -->
+            <div class="text-section">
+                <h1>嗨！我是则鸣！</h1> <!-- 标题 -->
+                <div class="subtitle">欢迎来到我的主页</div> <!-- 副标题 -->
+                <div class="description">
+                    High level experience in web design and development knowledge, producing quality work.
+                </div> <!-- 简短介绍 -->
+                <div class="icons">
+                    <a href="#"><img src="path-to-your-github-icon.png" alt="GitHub"></a> <!-- GitHub 图标链接 -->
+                    <a href="#"><img src="path-to-your-facebook-icon.png" alt="Facebook"></a> <!-- Facebook 图标链接 -->
+                    <a href="#"><img src="path-to-your-linkedin-icon.png" alt="LinkedIn"></a> <!-- LinkedIn 图标链接 -->
+                </div>
+                <a href="#" class="contact-btn">Contact Me</a> <!-- 联系按钮 -->
+            </div>
+            <div class="image-section">
+                <img src="your-image-url.png" alt="ASOUTHERNCAT" class="controlled-img"> <!-- 图像 -->
+            </div>
+        </div>
+
+        <!-- 关于页面内容 -->
+        <section class="section" id="about"> <!-- 关于部分 -->
+            <div class="container">
+                <h2>关于我</h2> <!-- 标题 -->
+                <p>简单介绍</p> <!-- 简短介绍 -->
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>鲁迅美术学院，在校研究生，从事当代艺术，这个网页是作业的一部分。</p>
+                        <div class="stats">
+                            <div>
+                                <h3>00+</h3> <!-- 统计数字 -->
+                                <p>年工作经验</p> <!-- 统计描述 -->
+                            </div>
+                            <div>
+                                <h3>00+</h3> <!-- 统计数字 -->
+                                <p>完成项目</p> <!-- 统计描述 -->
+                            </div>
+                            <div>
+                                <h3>00+</h3> <!-- 统计数字 -->
+                                <p>公司任职</p> <!-- 统计描述 -->
+                            </div>
+                        </div>
+                        <a href="#" class="resume-btn">查看简历</a> <!-- 查看简历按钮 -->
+                    </div>
+                    <div class="about-image">
+                        <img src="your-about-image-url.png" alt="About Image" class="controlled-img"> <!-- 关于图像 -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Portfolio 页面 -->
+<section class="section" id="portfolio">
+    <div class="container">
+        <h2>作品</h2> <!-- 项目集页面标题 -->
+        <p>课程作业</p> <!-- 项目集页面副标题 -->
+        <div class="portfolio-wrapper">
+            <div class="portfolio-container">
+                <div class="portfolio-item">
+                    <img src="path-to-your-project-image1.png" alt="Project Image"> <!-- 项目图像 -->
+                    <div class="portfolio-info">
+                        <h3>AI生成</h3> <!-- 项目标题 -->
+                        <p>AI生成课程作业</p> <!-- 项目描述 -->
+                        <a href="project1.html" class="demo-btn">查看详细</a> <!-- 项目演示链接 -->
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="path-to-your-project-image2.png" alt="Project Image"> <!-- 项目图像 -->
+                    <div class="portfolio-info">
+                        <h3>更多作品</h3> <!-- 项目标题 -->
+                        <p>其他课程作业</p> <!-- 项目描述 -->
+                        <a href="project2.html" class="demo-btn">查看详细</a> <!-- 项目演示链接 -->
+                    </div>
+                </div>
+                <!-- 添加更多项目项 -->
+            </div>
+            <div class="portfolio-arrows">
+                <button class="arrow left-arrow">❮</button> <!-- 左箭头按钮 -->
+                <button class="arrow right-arrow">❯</button> <!-- 右箭头按钮 -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .premiere-icon {
+        width: 50px; /* 设置Adobe Premiere Pro图像的宽度 */
+        height: 50px; /* 设置Adobe Premiere Pro图像的高度 */
+    }
+    .blender-icon {
+        width: 60px; /* 设置blender图像的宽度 */
+        height: 60px; /* 设置blender图像的高度 */
+    }
+    .portfolio-arrows .arrow {
+        background-color: rgba(106, 13, 173, 0.7); /* 设置箭头按钮颜色和透明度 */
+        border: none; /* 移除边框 */
+        color: white; /* 设置箭头颜色为白色 */
+        font-size: 24px; /* 设置字体大小 */
+        cursor: pointer; /* 鼠标悬停时显示为指针 */
+        padding: 10px; /* 设置内边距 */
+        margin: 5px; /* 设置外边距 */
+        border-radius: 15px; /* 设置圆角 */
+    }
+    .portfolio-arrows .arrow:hover {
+        background-color: rgba(106, 13, 173, 0.9); /* 鼠标悬停时增加不透明度 */
+    }
+</style>
+
+
+        <!-- 联系页面内容 -->
+        <section class="section" id="contact"> <!-- 联系部分 -->
+            <div class="container">
+                <h2>联系我</h2> <!-- 标题 -->
+                <p>Get in touch</p> <!-- 简短介绍 -->
+                <div class="contact-info"> <!-- 联系信息容器 -->
+                    <div class="contact-item"> <!-- 联系信息项 -->
+                        <i class="icon">📞</i> <!-- 电话图标 -->
+                        <h3>电话</h3> <!-- 联系方式标题 -->
+                        <p>166******* </p> <!-- 电话号码 -->
+                    </div>
+                    <div class="contact-item"> <!-- 联系信息项 -->
+                        <i class="icon">✉️</i> <!-- 邮箱图标 -->
+                        <h3>邮箱</h3> <!-- 联系方式标题 -->
+                        <p>asoutherncat@gmail.com</p> <!-- 邮箱地址 -->
+                    </div>
+                    <div class="contact-item"> <!-- 联系信息项 -->
+                        <i class="icon">📍</i> <!-- 位置图标 -->
+                        <h3>地址</h3> <!-- 联系方式标题 -->
+                        <p>沈阳, 中国</p> <!-- 位置 -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 滚动按钮部分 -->
+        <div class="scroll-button">
+            <button onclick="scrollToNextPage()">Scroll down</button> <!-- 滚动按钮 -->
+        </div>
+    </div>
+
+    <!-- 引入JavaScript文件 -->
+    <script>
+        document.addEventListener('click', function(e) {
+            // 创建一个新的div元素
+            var circle = document.createElement('div');
+            // 添加click-effect类
+            circle.className = 'click-effect';
+            // 设置元素的初始位置
+            circle.style.left = e.pageX + 'px';
+            circle.style.top = e.pageY + 'px';
+            // 将元素添加到文档中
+            document.body.appendChild(circle);
+
+            // 设置一个定时器，在动画结束后移除该元素
+            setTimeout(function() {
+                circle.remove();
+            }, 500); // 500ms 与 CSS 中的动画持续时间相匹配
+        });
+    </script>
 </body>
 </html>
