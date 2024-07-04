@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 1</title>
     <link rel="stylesheet" href="styles.css"> <!-- 链接到外部CSS文件 -->
+    <style>
+        body {
+            background-color: white; /* 设置背景颜色为白色 */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -13,11 +18,12 @@
                 <a href="index.html">ASOUTHERNCAT</a> <!-- 返回首页的logo链接 -->
             </div>
             <ul class="nav-links"> <!-- 导航链接列表 -->
-                <li><a href="index.html#home">Home</a></li> <!-- 首页链接 -->
-                <li><a href="index.html#about">About</a></li> <!-- 关于链接 -->
-                <li><a href="index.html#skills">Skills</a></li> <!-- 技能链接 -->
-                <li><a href="index.html#portfolio" class="active">Portfolio</a></li> <!-- 项目集链接 -->
-                <li><a href="index.html#contact">Contact</a></li> <!-- 联系链接 -->
+                <li><a href="#home" class="active">首页</a></li> <!-- 首页链接 -->
+                <li><a href="#about">关于</a></li> <!-- 关于链接 -->
+                <li><a href="#skills">技能</a></li> <!-- 技能链接 -->
+                <li><a href="#portfolio">项目</a></li> <!-- 项目集链接 -->
+                <li><a href="#contact">联系方式</a></li> <!-- 联系链接 -->
+                <li><a href="#" id="toggle-mode" class="toggle-mode"><i class="icon">🌙</i></a></li> <!-- 夜间模式图标链接 -->
             </ul>
         </nav>
     </header>
@@ -28,11 +34,14 @@
             <p>Details about Project 1...</p> <!-- 项目1的详细信息 -->
             
             <!-- 图片位置 -->
+            <!-- 图片位置 -->
             <div class="media-section">
-                <h2>Project Image</h2>
-                <img src="path-to-your-project-image1.png" alt="Project Image" class="project-image">
+                <h2>Project Images</h2>
+                <img src="path-to-your-project-image1.png" alt="Project Image 1" class="project-image">
+                <img src="path-to-your-project-image22.png" alt="Project Image 2" class="project-image">
+                <img src="path-to-your-project-image3.png" alt="Project Image 3" class="project-image">
+                <img src="path-to-your-project-image4.png" alt="Project Image 4" class="project-image">
             </div>
-            
             <!-- 音乐位置 -->
             <div class="media-section">
                 <h2>Project Music</h2>

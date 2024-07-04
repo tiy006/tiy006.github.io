@@ -81,7 +81,7 @@ function setup() {
 }
 
 function draw() {
-    background(255, 255, 255, 25); // 设置背景色并增加透明度
+    background(255); // 设置不透明的白色背景，去除拖尾效果
     // 更新并显示每个普通粒子
     for (let particle of particles) {
         particle.update(); // 更新粒子位置
@@ -113,7 +113,7 @@ class Particle {
             this.vel = createVector(random(-1, 1), random(-1, 1)); // 普通粒子的随机速度
         }
         this.size = random(3, 8); // 粒子的随机大小
-        this.brightness = 255; // 粒子的亮度设为最大值
+        this.brightness = random(50, 255); // 粒子的随机亮度
     }
 
     update() {
@@ -127,6 +127,7 @@ class Particle {
     show() {
         noStroke();
         fill(106, 13, 173, this.lifespan); // 设置粒子颜色为rgb(106, 13, 173)
+        fill(106, 13, 173, this.lifespan); // 设置填充颜色为rgb(106, 13, 173)
         ellipse(this.pos.x, this.pos.y, this.size); // 画出粒子
     }
 
