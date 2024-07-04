@@ -1,31 +1,31 @@
 // particles.js - 粒子效果和烟花效果
-let particles = [];
-let fireworks = [];
+let particles = []; // 存储普通粒子的数组
+let fireworks = []; // 存储烟花粒子的数组
 
 function setup() {
     let canvas = createCanvas(window.innerWidth, window.innerHeight); // 创建画布
-    canvas.parent('particle-container'); // 将画布附加到 particle-container
-    noStroke();
+    canvas.parent('particle-container'); // 将画布附加到 particle-container 元素
+    noStroke(); // 不使用描边
     // 创建100个普通粒子
     for (let i = 0; i < 100; i++) {
-        particles.push(new Particle());
+        particles.push(new Particle()); // 添加普通粒子到数组中
     }
 }
 
 function draw() {
-    background(255); // 白色背景
+    background(255); // 白色背景，每帧清除之前的画面
 
     // 更新并显示每个普通粒子
     for (let particle of particles) {
-        particle.update();
-        particle.show();
+        particle.update(); // 更新粒子位置
+        particle.show(); // 显示粒子
     }
 
     // 更新并显示每个烟花粒子
     for (let i = fireworks.length - 1; i >= 0; i--) {
         let firework = fireworks[i];
-        firework.update();
-        firework.show();
+        firework.update(); // 更新烟花粒子位置
+        firework.show(); // 显示烟花粒子
         if (firework.finished()) {
             fireworks.splice(i, 1); // 移除已完成的烟花粒子
         }
@@ -87,5 +87,7 @@ function mousePressed() {
     for (let i = 0; i < 100; i++) {
         fireworks.push(new Particle(mouseX, mouseY, true)); // 创建烟花粒子并添加到fireworks数组中
     }
+}
+
 }
 
